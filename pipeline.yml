@@ -9,7 +9,7 @@ pipelines:
    configuration:
      environmentVariables:
        readOnly:
-         myRoutingKey: 8c22b13ccaa04da79a9952761248c3370
+         myRoutingKey: 8c22b13ccaa04da79a9952761248c338
    steps:
 #      - name: ps_pagerduty_success
 #        type: PowerShell
