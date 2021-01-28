@@ -33,6 +33,6 @@ pipelines:
            - name: pagerduty
        execution:
          onExecute:
-           - send_notification pagerduty --routingkey $myRoutingKey 
+           - send_notification pagerduty 
         
          
