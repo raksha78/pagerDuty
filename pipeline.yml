@@ -21,7 +21,7 @@ pipelines:
            - name: pagerduty
        execution:
          onExecute:
-           -  send_notification pagerduty --text "hello world from powershell testing, run number $run_number" 
+           -  send_notification pagerduty --routingkey $myRoutingKey --text "hello world from powershell testing, run number $run_number" 
         
  
 #      - name: bash_pagerduty_success
