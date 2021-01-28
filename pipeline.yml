@@ -9,7 +9,7 @@ pipelines:
    configuration:
      environmentVariables:
        readOnly:
-         myRoutingKey: 8c22b13ccaa04da79a9952761248c337
+         myRoutingKey: 8c22b13ccaa04da79a9952761248c3370
    steps:
 #      - name: ps_pagerduty_success
 #        type: PowerShell
@@ -33,6 +33,6 @@ pipelines:
            - name: pagerduty
        execution:
          onExecute:
-           - send_notification pagerduty --text "hello world from powershell testing, run number $run_number" 
+           - send_notification pagerduty --routingkey $myRoutingKey --text "hello world from powershell testing, run number $run_number" 
         
          
