@@ -29,8 +29,8 @@ pipelines:
        configuration:
          inputResources:
            - name: start_all
-#          integrations:
-#            - name: pagerduty
+         integrations:
+           - name: pagerduty
        execution:
          onExecute:
            - send_notification pagerduty --routingkey $myRoutingKey --text "hello world from powershell testing, run number $run_number" 
