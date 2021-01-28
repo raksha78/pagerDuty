@@ -25,7 +25,7 @@ pipelines:
          //  -  send_notification pagerduty -routingkey $myRoutingKey 
          //  -  send_notification pagerduty -routingkey badkey -text "bad routing key" 
          //  -  send_notification pagerduty -text "no routing key" 
-         //  -  send_notification pagerduty 
+         
  
      - name: bash_pagerduty_success
        type: Bash
@@ -40,4 +40,4 @@ pipelines:
          //  - send_notification pagerduty --routingkey $myRoutingKey 
          //  - send_notification pagerduty --routingkey badkey --text "bad routing key"
          //  - send_notification pagerduty --text "no routing key"
-         //  - send_notification pagerduty
+         
