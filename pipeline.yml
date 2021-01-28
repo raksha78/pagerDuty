@@ -11,28 +11,28 @@ pipelines:
        readOnly:
          myRoutingKey: 8c22b13ccaa04da79a9952761248c337
    steps:
-     - name: ps_pagerduty_success
-       type: PowerShell
-       configuration:
-         nodePool: static-win
-         inputResources:
-           - name: start_all
-         integrations:
-           - name: pagerduty
-       execution:
-         onExecute:
-           -  send_notification pagerduty -routingkey $myRoutingKey -text "hello world from powershell testing, run number $run_number" 
-        
- 
-#      - name: bash_pagerduty_success
-#        type: Bash
+#      - name: ps_pagerduty_success
+#        type: PowerShell
 #        configuration:
+#          nodePool: static-win
 #          inputResources:
 #            - name: start_all
 #          integrations:
 #            - name: pagerduty
 #        execution:
 #          onExecute:
-#            - send_notification pagerduty --routingkey $myRoutingKey --text "hello world from bash run number $run_number"
+#            -  send_notification pagerduty -routingkey $myRoutingKey -text "hello world from powershell testing, run number $run_number" 
+        
+ 
+     - name: bash_pagerduty_success
+       type: Bash
+       configuration:
+         inputResources:
+           - name: start_all
+         integrations:
+           - name: pagerduty
+       execution:
+         onExecute:
+           - send_notification pagerduty --routingkey $myRoutingKey --text "hello world from bash testing run number $run_number"
         
          
